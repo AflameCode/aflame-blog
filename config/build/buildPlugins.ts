@@ -1,15 +1,17 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
-import { buildOptions } from "../types/config";
+import { BuildOptions } from "./types/config";
 
 import webpack from "webpack";
+
 export const buildPlugins = (
-  options: buildOptions
+  options: BuildOptions
 ): webpack.WebpackPluginInstance[] => {
+  const { paths } = options;
   return [
     new HtmlWebpackPlugin({
-      template: options.paths.html,
+      template: paths.html,
       inject: "body",
-      favicon: options.paths.favicon,
+      favicon: paths.favicon,
     }),
     new webpack.ProgressPlugin(),
   ];
