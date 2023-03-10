@@ -1,12 +1,5 @@
 import { render } from "react-dom";
-import { Test } from "./Test";
-import "./index.scss";
+import { App } from "./App";
 
 console.log("aflame -code");
-render(
-  <div>
-    <Test />
-    <p>asadfasdfad</p>
-  </div>,
-  document.getElementById("root")
-);
+render(<App />, document.getElementById("root"));
