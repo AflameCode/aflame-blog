@@ -1,13 +1,17 @@
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-
-import { AboutPage } from "../3pages/AboutPage";
-import { MainPage } from "../3pages/MainPage";
-import { Navbar } from "../4widgeets/Navbar";
-
-import "./style/index.css";
 import { useTheme } from "./providers/ThemeProvider/lib/useTheme";
-import { classNames } from "../7shared/lib/classNames/classNames";
+
+import { AboutPage } from "3pages/AboutPage";
+import { MainPage } from "3pages/MainPage";
+import { Navbar } from "4widgets/Navbar";
+
+import { classNames } from "7shared/lib/classNames/classNames";
+
+
+
+
+import "./styles/index.css";
 
 interface AppProps {
   className?: string;

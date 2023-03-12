@@ -8,6 +8,7 @@ export interface BuildPath {
   html: string;
   favicon: string;
   build: string;
+  src: string;
 }
 
 export interface BuildOptions {

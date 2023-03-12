@@ -4,9 +4,9 @@ import webpack from "webpack";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 
 export const buildPlugins = (
-  options: BuildOptions
+  buildOptions: BuildOptions
 ): webpack.WebpackPluginInstance[] => {
-  const { paths } = options;
+  const { paths } = buildOptions;
   return [
     new HtmlWebpackPlugin({
       template: paths.html,

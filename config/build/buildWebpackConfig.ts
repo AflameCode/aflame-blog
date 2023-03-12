@@ -2,11 +2,13 @@ import { Configuration } from "webpack";
 import { buildDevServer } from "./buildDevServer";
 import { buildLoaders } from "./buildLoaders";
 import { buildPlugins } from "./buildPlugins";
-import { buildResolve } from "./buildResolve";
+import { buildResolvers } from "./buildResolvers";
 import { BuildOptions } from "./types/config";
 
-export const buildWebpackConfig = (options: BuildOptions): Configuration => {
-  const { mode, paths, isDev } = options;
+export const buildWebpackConfig = (
+  buildOptions: BuildOptions
+): Configuration => {
+  const { mode, paths, isDev } = buildOptions;
   return {
     mode: mode,
     entry: paths.entry,
@@ -15,12 +17,12 @@ export const buildWebpackConfig = (options: BuildOptions): Configuration => {
       filename: "[name].[contenthash].js",
       clean: true,
     },
-    plugins: buildPlugins(options),
+    plugins: buildPlugins(buildOptions),
     module: {
-      rules: buildLoaders(options),
+      rules: buildLoaders(buildOptions),
     },
-    resolve: buildResolve(),
+    resolve: buildResolvers(buildOptions),
     devtool: isDev ? "inline-source-map" : false,
-    devServer: isDev ? buildDevServer(options) : undefined,
+    devServer: isDev ? buildDevServer(buildOptions) : undefined,
   };
 };
