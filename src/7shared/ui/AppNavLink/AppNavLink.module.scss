@@ -1,0 +1,18 @@
+.appNavLink {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.primary {
+  color: var(--inverted-primary-color);
+}
+.primary:hover {
+  border-bottom: 1px solid var(--inverted-primary-color);
+}
+.secondary {
+  color: var(--inverted-secondary-color);
+}
+
+.secondary:hover {
+  border-bottom: 1px solid var(--inverted-secondary-color);
+}
