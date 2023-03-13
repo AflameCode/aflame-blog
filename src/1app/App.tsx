@@ -8,10 +8,8 @@ import { Navbar } from "4widgets/Navbar";
 
 import { classNames } from "7shared/lib/classNames/classNames";
 
-
-
-
 import "./styles/index.css";
+import { AppRouter } from "./router";
 
 interface AppProps {
   className?: string;
@@ -24,12 +22,7 @@ export const App = (props: AppProps) => {
   return (
     <div className={classNames("app", {}, [theme])}>
       <Navbar />
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/about" element={<AboutPage />} />
-        </Routes>
-      </Suspense>
+      <AppRouter />
       <button onClick={toggleTheme}>theme</button>
     </div>
   );
